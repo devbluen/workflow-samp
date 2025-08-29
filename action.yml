@@ -4,14 +4,14 @@ branding:
   icon: truck
   color: orange
 inputs:
-  version: 
+  version:
     description: 'Version of sampctl'
     required: true
     default: '1.11.0'
 runs:
   using: "composite"
   steps:
-      shell: pwsh
+    - shell: pwsh
       run: |
         Invoke-WebRequest -Uri "https://github.com/Southclaws/sampctl/releases/download/${{ inputs.version }}/sampctl_${{ inputs.version }}_windows_amd64.tar.gz" -OutFile "sampctl.tar.gz"
         Expand-Archive -Path "sampctl.tar.gz" -DestinationPath "$env:USERPROFILE\sampctl"
