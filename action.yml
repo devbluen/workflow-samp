@@ -11,8 +11,8 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - shell: pwsh
+      shell: pwsh
       run: |
-        Invoke-WebRequest -Uri "https://github.com/Southclaws/sampctl/releases/download/${{ inputs.version }}/sampctl_${{ inputs.version }}_windows_amd64.zip" -OutFile "sampctl.zip"
-        Expand-Archive -Path "sampctl.zip" -DestinationPath "$env:USERPROFILE\sampctl"
+        Invoke-WebRequest -Uri "https://github.com/Southclaws/sampctl/releases/download/${{ inputs.version }}/sampctl_${{ inputs.version }}_windows_amd64.tar.gz" -OutFile "sampctl.tar.gz"
+        Expand-Archive -Path "sampctl.tar.gz" -DestinationPath "$env:USERPROFILE\sampctl"
         $env:Path += ";$env:USERPROFILE\sampctl"
