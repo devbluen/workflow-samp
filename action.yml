@@ -1,4 +1,4 @@
-name: 'sampctl Action'
+name: 'sampctl Action Windows'
 description: 'Setup sampctl in the environment'
 branding:
   icon: truck
