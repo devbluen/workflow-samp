@@ -14,5 +14,6 @@ runs:
     - shell: pwsh
       run: |
         Invoke-WebRequest -Uri "https://github.com/Southclaws/sampctl/releases/download/${{ inputs.version }}/sampctl_${{ inputs.version }}_windows_amd64.tar.gz" -OutFile "sampctl.tar.gz"
+        New-Item -ItemType Directory -Path "$env:USERPROFILE\sampctl" -Force
         tar -xzf sampctl.tar.gz -C "$env:USERPROFILE\sampctl"
         $env:Path += ";$env:USERPROFILE\sampctl"
